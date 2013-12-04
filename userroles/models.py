@@ -16,6 +16,7 @@ class UserRole(models.Model):
         return getattr(self, self.child)
 
     def __eq__(self, other):
+        other_name = getattr(other, "name", "")
         return self.name == other.name
 
     def __getattr__(self, name):
