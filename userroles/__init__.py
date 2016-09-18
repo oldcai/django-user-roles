@@ -1,3 +1,4 @@
+from builtins import str
 from django.conf import settings
 from django.core.exceptions import ImproperlyConfigured
 import importlib
@@ -43,7 +44,7 @@ class Roles(object):
         if self._roles_dict is None:
             self._roles_dict = {}
             for item in self._config:
-                if isinstance(item, basestring):
+                if isinstance(item, str):
                     # An item like 'manager'
                     self._roles_dict[item] = None
                 else:
