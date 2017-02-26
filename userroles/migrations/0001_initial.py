@@ -20,7 +20,7 @@ class Migration(migrations.Migration):
             name='UserRole',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(choices=[(b'premium', b'premium'), (b'trial', b'trial'), (b'vip', b'vip'), (b'user', b'user'), (b'enterprise', b'enterprise'), (b'user_inactive', b'user_inactive')], max_length=100)),
+                ('name', models.CharField(choices=[('premium', 'premium'), ('trial', 'trial'), ('vip', 'vip'), ('user', 'user'), ('enterprise', 'enterprise'), ('user_inactive', 'user_inactive')], max_length=100)),
                 ('child', models.CharField(blank=True, max_length=100)),
                 ('user', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, related_name='role', to=settings.AUTH_USER_MODEL)),
             ],
